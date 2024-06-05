@@ -7,7 +7,7 @@
 ## LLMのAPIキーを設定する
 
 プロジェクトのルートディレクトリに```keys.cfg```を作成する。
-今回はGPT4を使う前提で話を進める。```OPENAI_API_KEY: '<your-api-key>'```を書き込む。なお、キーは[ポータル](https://platform.openai.com/api-keys)から発行できる。\\
+今回はGPT4を使う前提で話を進める。```OPENAI_API_KEY: '<your-api-key>'```を書き込む。なお、キーは[ポータル](https://platform.openai.com/api-keys)から発行できる。
 また、呼び出しに必要なクレジットを追加しておくこと。
 
 ## エージェントを実行
