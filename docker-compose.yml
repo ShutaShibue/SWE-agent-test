@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  swe-agent:
+    image: sweagent/swe-agent-run:latest
+    container_name: swe-agent-container
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./output:/app/output
+      #- ./trajectories:/app/trajectories
+      - ./keys.cfg:/app/keys.cfg
+    command: >
+      sh -c "python run.py --image_name=sweagent/swe-agent:latest
+      --model_name gpt4
+      --data_path https://github.com/ShutaShibue/git_issue_test/issues/1
+      --config_file config/default_from_url.yaml
+      --skip_existing=False |
+      sed -E 's/\\x1b\\[([0-9]{1,3}((;[0-9]{1,3})*)?)?[mGK]//g' > output/output.txt"
+
